@@ -16,7 +16,7 @@ INFUTECH(팀 WON SHOT)의 발표 자료 **「반려동물 주사약물 투약 �
 | 2–4 | 01 문제 배경 — 새벽 3시 · 확인 공백 26.7% · 기록 공백 19.5% | 45초 |
 | 5 | 02 기존 시스템의 한계 — 1인 병원 71.8% · 펌프 110만 원 · 다중 센서 폴대 100만 원+ | 17초 |
 | 6–8 | 03 아이디어 소개 — 현장 인터뷰 · INFU RETRO · **센서 절감 설계** | 59초 |
-| 9–11 | 04 시연 — 영상 · 상황별 판별 데이터 · 검증 성과 | 58초 |
+| 9–11 | 04 시연 — 영상 · 논문(판별 알고리즘) · 검증 성과 | 58초 |
 | 12 | 05 시장분석 | 17초 |
 | 13–14 | 06 차별점 — 대안 비교 · 인허가 | 30초 |
 | 15 | 07 제품 원가 — 실질 판매원가 8만 원 | 16초 |
@@ -52,7 +52,7 @@ INFUTECH(팀 WON SHOT)의 발표 자료 **「반려동물 주사약물 투약 �
 | `media/` | 시제품 · 현장 · PCB 사진, 시연 영상, 논문 · 약정서 · 협약서 쪽 이미지, 팀 사진 |
 | `fonts/pretendard-pitch.woff2` | 덱에 쓰인 글자만 담은 Pretendard 서브셋 |
 | `scripts/subset-font.py` | 문구를 고쳐 새 글자가 생겼을 때 서체 서브셋을 다시 만드는 스크립트 |
-| `scripts/infutech-charts.py` | 7 · 8 · 10장 차트를 NumPy · plotly.py로 계산해 `charts/charts.js`로 내보냄 (`pip install numpy plotly`) — 덱이 Plotly.js로 그 자리에서 그려 확대해도 선명하고 마우스를 올리면 값이 보입니다 |
+| `scripts/infutech-charts.py` | 7 · 8장 차트를 NumPy · plotly.py로 계산해 `charts/charts.js`로 내보냄 (`pip install numpy plotly`) — 덱이 Plotly.js로 그 자리에서 그려 확대해도 선명하고 마우스를 올리면 값이 보입니다 |
 | `charts/charts.js` | 위 스크립트가 만든 차트 정의 (직접 고치지 않음) |
 | `vendor/plotly-basic.min.js` | Plotly.js 2.35.2 basic 번들 (MIT, `vendor/LICENSE-plotly.txt`) |
 
