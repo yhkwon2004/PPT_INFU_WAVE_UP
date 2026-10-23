@@ -2,11 +2,13 @@
 
 INFUTECH(팀 WON SHOT)의 발표 자료 **「반려동물 주사약물 투약 관리 AIoT 솔루션」**을 PPT처럼 넘기는 웹페이지로 만든 것입니다. 빌드 없이 `index.html` 하나와 `media/` · `fonts/`로 동작합니다.
 
+**웹에서 보기: https://ppt-infu-wave-up.vercel.app** (Vercel, `main`에 푸시하면 자동 배포)
+
 ## 여는 법
 
 - **로컬**: 이 폴더에서 `python3 -m http.server 8000` 실행 → <http://localhost:8000>
   (파일을 바로 더블클릭해도 열리지만, 브라우저에 따라 서체가 시스템 서체로 보일 수 있습니다.)
-- **Vercel**: 빌드가 없는 정적 사이트입니다(`vercel.json` 포함). Vercel에서 이 저장소를 프로젝트로 가져오면 `main`에 푸시할 때마다 배포됩니다.
+- **Vercel**: https://ppt-infu-wave-up.vercel.app — 프로젝트 `ppt-infu-wave-up`이 이 저장소에 연결돼 있어 `main`에 푸시할 때마다 자동 배포됩니다. 빌드가 없는 정적 사이트입니다(`vercel.json`).
 - **GitHub Pages**: 저장소 Settings → Pages → Branch `main` / `/ (root)` → 저장하면 `https://yhkwon2004.github.io/PPT_INFU_WAVE_UP/`에서 열립니다.
 
 ## 발표 구성 (본 발표 20장 · 5분)
