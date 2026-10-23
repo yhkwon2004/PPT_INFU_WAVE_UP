@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""index.html에 쓰인 글자만 담은 Pretendard 서브셋(fonts/pretendard-pitch.woff2)을 다시 만듭니다.
+"""index.html · charts/charts.js에 쓰인 글자만 담은 Pretendard 서브셋(fonts/pretendard-pitch.woff2)을 다시 만듭니다.
 
 덱 문구를 고쳐 새 글자가 생기면 실행합니다(없는 글자는 시스템 서체로 보입니다).
 
@@ -20,6 +20,9 @@ html = os.path.join(ROOT, 'index.html')
 out = os.path.join(ROOT, 'fonts', 'pretendard-pitch.woff2')
 
 text = open(html, encoding='utf-8').read()
+charts = os.path.join(ROOT, 'charts', 'charts.js')
+if os.path.exists(charts):
+    text += open(charts, encoding='utf-8').read()
 chars = set(text) | set(string.printable) | set('·—–…“”‘’「」→←↔↓↑×−±①②③※%')
 chars = {c for c in chars if c.isprintable() and not c.isspace()} | {' ', ' '}
 

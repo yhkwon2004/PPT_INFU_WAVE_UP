@@ -52,7 +52,9 @@ INFUTECH(팀 WON SHOT)의 발표 자료 **「반려동물 주사약물 투약 �
 | `media/` | 시제품 · 현장 · PCB 사진, 시연 영상, 논문 · 약정서 · 협약서 쪽 이미지, 팀 사진 |
 | `fonts/pretendard-pitch.woff2` | 덱에 쓰인 글자만 담은 Pretendard 서브셋 |
 | `scripts/subset-font.py` | 문구를 고쳐 새 글자가 생겼을 때 서체 서브셋을 다시 만드는 스크립트 |
-| `scripts/infutech-figures.py` | 7 · 8 · 10장 그래프를 NumPy · Matplotlib로 계산해 `media/fig-*.webp`로 저장 (`pip install numpy matplotlib pillow`, Pretendard OTF 폴더는 `PRETENDARD_DIR`로 지정) |
+| `scripts/infutech-charts.py` | 7 · 8 · 10장 차트를 NumPy · plotly.py로 계산해 `charts/charts.js`로 내보냄 (`pip install numpy plotly`) — 덱이 Plotly.js로 그 자리에서 그려 확대해도 선명하고 마우스를 올리면 값이 보입니다 |
+| `charts/charts.js` | 위 스크립트가 만든 차트 정의 (직접 고치지 않음) |
+| `vendor/plotly-basic.min.js` | Plotly.js 2.35.2 basic 번들 (MIT, `vendor/LICENSE-plotly.txt`) |
 
 **사진 바꾸기**: 같은 파일 이름으로 `media/`에 덮어쓰면 그대로 바뀝니다. 감정선을 맡은 사진은 `cover-night.webp`(표지) · `scene-night.webp`(새벽 3시) · `pet-cat-iv.webp`(26.7%) · `vet-cat.webp`(기대효과)입니다.
 
