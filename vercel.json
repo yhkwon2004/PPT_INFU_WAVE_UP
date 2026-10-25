@@ -3,7 +3,7 @@
   "framework": null,
   "headers": [
     {
-      "source": "/(media|fonts|vendor)/(.*)",
+      "source": "/(media|fonts|charts)/(.*)",
       "headers": [{ "key": "Cache-Control", "value": "public, max-age=604800" }]
     }
   ]

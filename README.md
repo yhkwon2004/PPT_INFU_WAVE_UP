@@ -28,7 +28,7 @@ INFUTECH(팀 WON SHOT)의 발표 자료 **「반려동물 주사약물 투약 �
 | 18 | 10 기대효과 — 사람 병원의 업무 부담 근거 | 12초 |
 | 19–20 | 11 팀 소개 · 마무리 | 15초 |
 
-**부록 7장**은 본 발표에 쓴 자료의 원문 · 상세입니다: 핵심 알고리즘(CNN 학습 로그), 하드웨어 · PCB, 논문 전문, ㈜씨엔 공급 약정서 전문, ㈜에스케이엠엔엠 MOU 전문, 처방량 · 보도, 업무 부담 완화 근거.
+**부록 8장**은 본 발표에 쓴 자료의 원문 · 상세입니다: 핵심 알고리즘(CNN 학습 로그), 센서 절감 학습(학습 장비 신호 그래프), 하드웨어 · PCB, 논문 전문, ㈜씨엔 공급 약정서 전문, ㈜에스케이엠엔엠 MOU 전문, 처방량 · 보도, 업무 부담 완화 근거.
 
 화면 문구는 짧게 두고, 말할 내용은 장마다 **발표 노트**(`N`)에 있습니다.
 
@@ -55,9 +55,8 @@ INFUTECH(팀 WON SHOT)의 발표 자료 **「반려동물 주사약물 투약 �
 | `media/` | 시제품 · 현장 · PCB 사진, 시연 영상, 논문 · 약정서 · 협약서 쪽 이미지, 팀 사진 |
 | `fonts/pretendard-pitch.woff2` | 덱에 쓰인 글자만 담은 Pretendard 서브셋 |
 | `scripts/subset-font.py` | 문구를 고쳐 새 글자가 생겼을 때 서체 서브셋을 다시 만드는 스크립트 |
-| `scripts/infutech-charts.py` | 7 · 8장 차트를 NumPy · plotly.py로 계산해 `charts/charts.js`로 내보냄 (`pip install numpy plotly`) — 덱이 Plotly.js로 그 자리에서 그려 확대해도 선명하고 마우스를 올리면 값이 보입니다 |
-| `charts/charts.js` | 위 스크립트가 만든 차트 정의 (직접 고치지 않음) |
-| `vendor/plotly-basic.min.js` | Plotly.js 2.35.2 basic 번들 (MIT, `vendor/LICENSE-plotly.txt`) |
+| `scripts/infutech-charts.py` | 7장 칼만필터 썸네일 · 부록 A2 학습 장비 신호를 NumPy로 계산해 Matplotlib으로 그린 고정 SVG로 내보냄 (`pip install numpy matplotlib`, 서체는 `PRETENDARD_DIR=<Pretendard-*.otf 폴더>`) |
+| `charts/filter.svg` · `charts/gyro.svg` | 위 스크립트가 만든 그래프 — 글자까지 윤곽선이라 어느 화면에서도 똑같이 보이고 확대해도 깨지지 않습니다 (직접 고치지 않음) |
 
 **사진 바꾸기**: 같은 파일 이름으로 `media/`에 덮어쓰면 그대로 바뀝니다. 감정선을 맡은 사진은 `cover-night.webp`(표지) · `scene-night.webp`(새벽 3시) · `pet-cat-iv.webp`(26.7%) · `vet-cat.webp`(기대효과)입니다.
 
