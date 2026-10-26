@@ -56,8 +56,8 @@ INFUTECH(팀 WON SHOT)의 발표 자료 **「반려동물 주사약물 투약 �
 | `index.html` | 덱 전체(마크업 · 스타일 · 스크립트) |
 | `media/` | 시제품 · 현장 · PCB 사진, 시연 영상, 논문 · 약정서 · 협약서 쪽 이미지, 팀 사진 |
 | `scripts/subset-pitch-font.py` | 덱에 쓰인 글자만 담은 Pretendard 서브셋(약 130KB)을 만들어 `index.html` 안(`<style id="pitch-font">`)에 넣는 스크립트 — 문구를 고쳐 새 글자가 생기면 실행(`pip install fonttools brotli`, `PRETENDARD_TTF=<PretendardVariable.ttf 경로>`). Pretendard에 없는 글자(한자 등)가 있으면 멈추고 알려 줍니다 |
-| `scripts/infutech-charts.py` | 덱의 모든 자료 그래프 — 3장 24시간 병원 비율, 4장 피해구제 접수 · 분쟁 해결률(숫자 · 막대 · 건수까지 한 장) · 해결 5건 중 1건, 8장 자이로 보정, 11장 epoch 정확도, 12장 이용률 · 시장 성장률 · 마약류 처방량, 15장 제작비 · 원가 구조 · 도입비, 17장 시장 규모 TAM · SAM · SOM(곳 수 · 금액까지 한 장), 7장 칼만필터 썸네일, 부록 A2 · A8을 Python(NumPy · Matplotlib)으로 그려 고정 SVG로 내보냄 — 그래프는 HTML로 그리지 않습니다 (`pip install numpy matplotlib`, 서체는 `PRETENDARD_DIR=<Pretendard-*.otf 폴더>`) |
-| `charts/*.svg` | 위 스크립트가 만든 그래프 16개 — 글자까지 윤곽선이라 어느 화면에서도 똑같이 보이고 확대해도 깨지지 않습니다 (직접 고치지 않음) |
+| `scripts/infutech-charts.py` | 덱의 모든 자료 그래프 — 3장 24시간 병원 비율, 4장 피해구제 접수 · 분쟁 해결률(숫자 · 막대 · 건수까지 한 장) · 해결 5건 중 1건, 8장 자이로 보정, 11장 epoch 정확도, 12장 이용률 · 시장 성장률(조사기관 4곳을 같은 색으로) · 마약류 처방량, 14장 의료기기 등급 사다리, 15장 제작비 · 원가 구조 · 도입비, 17장 시장 규모 TAM · SAM · SOM(곳 수 · 금액까지 한 장), 7장 칼만필터 · CNN 4×4 패턴 썸네일, 부록 A2 · A8을 Python(NumPy · Matplotlib)으로 그려 고정 SVG로 내보냄 — 그래프는 HTML로 그리지 않습니다 (`pip install numpy matplotlib`, 서체는 `PRETENDARD_DIR=<Pretendard-*.otf 폴더>`) |
+| `charts/*.svg` | 위 스크립트가 만든 그래프 18개 — 글자까지 윤곽선이라 어느 화면에서도 똑같이 보이고 확대해도 깨지지 않습니다 (직접 고치지 않음) |
 
 **사진 바꾸기**: 같은 파일 이름으로 `media/`에 덮어쓰면 그대로 바뀝니다. 감정선을 맡은 사진은 `cover-night.webp`(표지) · `scene-night.webp`(새벽 3시) · `pet-cat-iv.webp`(26.7%) · `vet-cat.webp`(기대효과)입니다.
 
