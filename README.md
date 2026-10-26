@@ -1,14 +1,13 @@
 # INFU RETRO 피치덱 — 2026 NEXT WAVE-UP
 
-INFUTECH(팀 WON SHOT)의 발표 자료 **「반려동물 주사약물 투약 관리 AIoT 솔루션」**을 PPT처럼 넘기는 웹페이지로 만든 것입니다. 빌드 없이 `index.html` 하나와 `media/` · `fonts/`로 동작합니다.
+INFUTECH(팀 WON SHOT)의 발표 자료 **「반려동물 주사약물 투약 관리 AIoT 솔루션」**을 PPT처럼 넘기는 웹페이지로 만든 것입니다. 빌드 없이 `index.html` 하나와 `media/` · `charts/`로 동작합니다(서체는 `index.html` 안에 들어 있습니다).
 
 **웹에서 보기: https://ppt-infu-wave-up.vercel.app** (Vercel, `main`에 푸시하면 자동 배포)
 
 ## 여는 법
 
-- **로컬**: 이 폴더에서 `python3 -m http.server 8000` 실행 → <http://localhost:8000>
-  (파일을 바로 더블클릭해도 열리지만, 브라우저에 따라 서체가 시스템 서체로 보일 수 있습니다.)
-- **Vercel**: https://ppt-infu-wave-up.vercel.app — 프로젝트 `ppt-infu-wave-up`이 이 저장소에 연결돼 있어 `main`에 푸시할 때마다 자동 배포됩니다. 빌드가 없는 정적 사이트입니다(`vercel.json`).
+- **로컬**: `index.html`을 바로 더블클릭해도 그대로 열립니다(인터넷 없이도 서체 · 그래프 · 영상이 똑같이 나옵니다). 서버로 열려면 이 폴더에서 `python3 -m http.server 8000` → <http://localhost:8000>
+- **Vercel**: https://ppt-infu-wave-up.vercel.app — 프로젝트 `ppt-infu-wave-up`이 이 저장소에 연결돼 있어 `main`에 푸시할 때마다 자동 배포됩니다. 빌드가 없는 정적 사이트입니다(`vercel.json`). 파일을 오래 캐시하지 않아, 같은 이름으로 사진 · 그래프를 바꿔도 다음 접속부터 바로 새 파일이 보입니다.
 - **GitHub Pages**: 저장소 Settings → Pages → Branch `main` / `/ (root)` → 저장하면 `https://yhkwon2004.github.io/PPT_INFU_WAVE_UP/`에서 열립니다.
 
 ## 발표 구성 (본 발표 20장 · 대본 5분)
@@ -46,7 +45,7 @@ INFUTECH(팀 WON SHOT)의 발표 자료 **「반려동물 주사약물 투약 �
 | `F` · `F5` | 전체 화면 (프레젠터의 슬라이드쇼 버튼) |
 | `B` | 화면 가리기 |
 
-**발표는 프레젠터(클리커)의 다음 · 이전만으로 진행됩니다.** 마우스로 눌러야 하는 것이 화면에 없고, 시연 영상은 장에 들어서면 저절로 재생되며 영상 흐름 목록도 따라 움직입니다. 노트북에서 열면 첫 장 위에 안내 창이나 조작 막대가 뜨지 않고, 조작 막대는 마우스를 움직일 때만 나타납니다(연습할 때는 사진 · 문서를 눌러 크게 볼 수 있습니다).
+**발표는 프레젠터(클리커)의 다음 · 이전만으로 진행됩니다.** 마우스로 눌러야 하는 것이 화면에 없고, 시연 영상은 장에 들어서면 저절로 재생되며 영상 흐름 목록도 따라 움직입니다. 노트북에서 열면 첫 장 위에 안내 창이나 조작 막대가 뜨지 않고, 조작 막대는 마우스를 실제로 움직일 때만 나타납니다(가만히 있는 커서 아래에서 화면이 바뀔 때 브라우저가 보내는 이동 신호는 무시)(연습할 때는 사진 · 문서를 눌러 크게 볼 수 있습니다).
 
 휴대폰에서도 슬라이드 뷰어처럼 16:9 화면 그대로 보여 줍니다 — 세로로 들고 있으면 뷰어가 옆으로 돌아가 화면을 꽉 채우고, 기기를 가로로 돌리면 바로 섭니다. 탭(왼쪽은 이전) · 밀기로 넘기고, 홈 화면에 추가하면 주소창 없이 가로 전체 화면으로 열립니다. 주소에 지금 장이 남습니다(`#mou`, `#sensor` …).
 
@@ -56,10 +55,9 @@ INFUTECH(팀 WON SHOT)의 발표 자료 **「반려동물 주사약물 투약 �
 |---|---|
 | `index.html` | 덱 전체(마크업 · 스타일 · 스크립트) |
 | `media/` | 시제품 · 현장 · PCB 사진, 시연 영상, 논문 · 약정서 · 협약서 쪽 이미지, 팀 사진 |
-| `fonts/pretendard-pitch.woff2` | 덱에 쓰인 글자만 담은 Pretendard 서브셋 |
-| `scripts/subset-font.py` | 문구를 고쳐 새 글자가 생겼을 때 서체 서브셋을 다시 만드는 스크립트 |
-| `scripts/infutech-charts.py` | 덱의 모든 자료 그래프 — 3장 24시간 병원 비율, 4장 피해구제 접수 · 분쟁 해결률, 8장 자이로 보정, 11장 epoch 정확도, 12장 이용률 · 시장 성장률 · 마약류 처방량, 15장 제작비 · 원가 구조 · 도입비, 7장 칼만필터 썸네일, 부록 A2 · A8을 Python(NumPy · Matplotlib)으로 그려 고정 SVG로 내보냄 — 그래프는 HTML로 그리지 않습니다 (`pip install numpy matplotlib`, 서체는 `PRETENDARD_DIR=<Pretendard-*.otf 폴더>`) |
-| `charts/*.svg` | 위 스크립트가 만든 그래프 15개 — 글자까지 윤곽선이라 어느 화면에서도 똑같이 보이고 확대해도 깨지지 않습니다 (직접 고치지 않음) |
+| `scripts/subset-pitch-font.py` | 덱에 쓰인 글자만 담은 Pretendard 서브셋(약 130KB)을 만들어 `index.html` 안(`<style id="pitch-font">`)에 넣는 스크립트 — 문구를 고쳐 새 글자가 생기면 실행(`pip install fonttools brotli`, `PRETENDARD_TTF=<PretendardVariable.ttf 경로>`). Pretendard에 없는 글자(한자 등)가 있으면 멈추고 알려 줍니다 |
+| `scripts/infutech-charts.py` | 덱의 모든 자료 그래프 — 3장 24시간 병원 비율, 4장 피해구제 접수 · 분쟁 해결률(숫자 · 막대 · 건수까지 한 장) · 해결 5건 중 1건, 8장 자이로 보정, 11장 epoch 정확도, 12장 이용률 · 시장 성장률 · 마약류 처방량, 15장 제작비 · 원가 구조 · 도입비, 17장 시장 규모 TAM · SAM · SOM(곳 수 · 금액까지 한 장), 7장 칼만필터 썸네일, 부록 A2 · A8을 Python(NumPy · Matplotlib)으로 그려 고정 SVG로 내보냄 — 그래프는 HTML로 그리지 않습니다 (`pip install numpy matplotlib`, 서체는 `PRETENDARD_DIR=<Pretendard-*.otf 폴더>`) |
+| `charts/*.svg` | 위 스크립트가 만든 그래프 16개 — 글자까지 윤곽선이라 어느 화면에서도 똑같이 보이고 확대해도 깨지지 않습니다 (직접 고치지 않음) |
 
 **사진 바꾸기**: 같은 파일 이름으로 `media/`에 덮어쓰면 그대로 바뀝니다. 감정선을 맡은 사진은 `cover-night.webp`(표지) · `scene-night.webp`(새벽 3시) · `pet-cat-iv.webp`(26.7%) · `vet-cat.webp`(기대효과)입니다.
 
