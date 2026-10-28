@@ -3,6 +3,7 @@
 INFUTECH(팀 WON SHOT)의 발표 자료 **「반려동물 주사약물 투약 관리 AIoT 솔루션」**을 PPT처럼 넘기는 웹페이지로 만든 것입니다. 빌드 없이 `index.html` 하나와 `media/` · `charts/`로 동작합니다(서체는 `index.html` 안에 들어 있습니다).
 
 **웹에서 보기: https://ppt-infu-wave-up.vercel.app** (Vercel, `main`에 푸시하면 자동 배포)
+**PowerPoint 파일: [`export/INFU-RETRO_WON-SHOT.pptx`](export/INFU-RETRO_WON-SHOT.pptx)** — 같은 32장 · 발표 노트 · 시연 영상 포함 (https://ppt-infu-wave-up.vercel.app/export/INFU-RETRO_WON-SHOT.pptx)
 
 ## 여는 법
 
@@ -54,8 +55,10 @@ INFUTECH(팀 WON SHOT)의 발표 자료 **「반려동물 주사약물 투약 �
 | 경로 | 내용 |
 |---|---|
 | `index.html` | 덱 전체(마크업 · 스타일 · 스크립트) |
-| `media/` | 시제품 · 현장 · PCB 사진, 시연 영상, 논문 · 약정서 · 협약서 쪽 이미지, 팀 사진 |
+| `media/` | 시제품 · 현장 · PCB 사진, 시연 영상, 논문 · 약정서 · 협약서 쪽 이미지, 팀 사진 (표지 · 머리글 · 마무리 장의 팀 표기는 WON SHOT 하나) |
 | `scripts/subset-pitch-font.py` | 덱에 쓰인 글자만 담은 Pretendard 서브셋(약 130KB)을 만들어 `index.html` 안(`<style id="pitch-font">`)에 넣는 스크립트 — 문구를 고쳐 새 글자가 생기면 실행(`pip install fonttools brotli`, `PRETENDARD_TTF=<PretendardVariable.ttf 경로>`). Pretendard에 없는 글자(한자 등)가 있으면 멈추고 알려 줍니다 |
+| `export/INFU-RETRO_WON-SHOT.pptx` | PowerPoint 파일(16:9 · 32장 · 약 14MB) — 장마다 웹 덱을 그대로 찍은 그림을 깔고, 발표 노트에 대본을 넣었으며, 9장 시연 영상과 부록 A4 렌더 영상은 같은 자리의 동영상 개체라 슬라이드쇼에서 저절로 재생됩니다(음소거 · 렌더는 반복). 서체가 없는 컴퓨터에서도 똑같이 보입니다 |
+| `scripts/infutech-pptx.cjs` | 위 PowerPoint 파일을 다시 만드는 스크립트 — `node scripts/infutech-pptx.cjs . export/INFU-RETRO_WON-SHOT.pptx` (필요: Node 18+, playwright · pptxgenjs · sharp, `NODE_PATH`로 전달). 문구 · 그래프를 고친 뒤 실행하면 같은 파일이 다시 나옵니다 |
 | `scripts/infutech-charts.py` | 덱의 모든 자료 그래프 — 3장 24시간 병원 비율, 4장 피해구제 접수 · 분쟁 해결률(숫자 · 막대 · 건수까지 한 장) · 신청 사유, 8장 자이로 보정, 11장 epoch 정확도, 12장 이용률 · 시장 성장률(조사기관 4곳을 같은 색으로) · 마약류 처방량, 14장 의료기기 등급 사다리, 15장 제작비 · 원가 구조 · 도입비, 17장 시장 규모 TAM · SAM · SOM(곳 수 · 금액까지 한 장), 7장 칼만필터 · CNN 4×4 패턴 썸네일, 부록 A2 · A8 · A10 ~ A12(분쟁 흐름 · 사유, 카테터 합병증 연구 3편 · 무게 곡선 예시, 치료비 · 양육비 · 병원당 연 매출)를 Python(NumPy · Matplotlib)으로 그려 고정 SVG로 내보냄 — 그래프는 HTML로 그리지 않습니다 (`pip install numpy matplotlib`, 서체는 `PRETENDARD_DIR=<Pretendard-*.otf 폴더>`) |
 | `charts/*.svg` | 위 스크립트가 만든 그래프 25개 — 글자까지 윤곽선이라 어느 화면에서도 똑같이 보이고 확대해도 깨지지 않습니다 (직접 고치지 않음) |
 
